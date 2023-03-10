@@ -9,7 +9,7 @@ multiple PersistentVolumeClaims, as long as the accessModes, storageClassName, a
 
 **Hostpath**
 if u want to create a volume such a way that u want the data is stored on both pods and available locally, for example the path in 
-pod = /etc/pathinpod/
+pod = /etc/pathinpod/ ;
 local= /etc/pathlocally/ #localhost path
 for this kind of scenario we can use HOSTPATH volume type
 
