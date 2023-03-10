@@ -39,3 +39,4 @@ spec:
     - name: local-content
       persistentVolumeClaim:
         claimName: local-content-pvc
+        
