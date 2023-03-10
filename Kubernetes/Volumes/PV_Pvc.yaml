@@ -1,0 +1,41 @@
+# Define the PersistentVolume
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: local-content-pv
+spec:
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: /path/to/local/content
+
+# Define the PersistentVolumeClaim
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: local-content-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
+
+# Define the Pod that uses the PersistentVolumeClaim
+apiVersion: v1
+kind: Pod
+metadata:
+  name: web-server
+spec:
+  containers:
+    - name: web-server
+      image: nginx
+      volumeMounts:
+        - name: local-content
+          mountPath: /usr/share/nginx/html
+  volumes:
+    - name: local-content
+      persistentVolumeClaim:
+        claimName: local-content-pvc
