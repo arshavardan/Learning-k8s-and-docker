@@ -10,3 +10,8 @@ usermod -s /bin/bash john # modifying the bash for the user
 docker exec -it -u (username) (container ID) bash # to login as john or a specific user 
 chmod og+x+r-w deploy.sh /or *.sh    
 chown newowner:newgroup filename.txt # to change the ownership of a file
+
+# back to docker commands
+docker container prune
+docker image prune
+docker image save -o react-app.tar react-app:3
