@@ -1,2 +1,11 @@
 docker-compose up
 docker-compose down --rmi all
+docker start -i 2f7sd
+
+##some ubuntu Commands
+export DB_USER=mosh
+useradd -m john # create a user with home dir
+usermod -s /bin/bash john # modifying the bash for the user 
+docker exec -it -u (username) (container ID) bash # to login as john or a specific user 
+chmod og+x+r-w deploy.sh /or *.sh    
+chown newowner:newgroup filename.txt # to change the ownership of a file
