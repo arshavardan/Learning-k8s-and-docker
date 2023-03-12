@@ -3,7 +3,8 @@ docker-compose down --rmi all
 docker start -i 2f7sd
 
 ##some ubuntu Commands
-export DB_USER=mosh
+export DB_USER=mosh  # to add a env variable 
+print $DB_USER # to print a particular env.variable
 useradd -m john # create a user with home dir
 usermod -s /bin/bash john # modifying the bash for the user 
 docker exec -it -u (username) (container ID) bash # to login as john or a specific user 
